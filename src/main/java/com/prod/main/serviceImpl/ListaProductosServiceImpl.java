@@ -32,7 +32,7 @@ public class ListaProductosServiceImpl implements ListaProductosService {
 	@Override
 	public List<ListaProductoResponseDto> ListaProductos() {
 		ArrayList<ListaProductoResponseDto> listaProductos = new ArrayList<>();
-        String path="C:\\Portables\\Images\\";
+        String path="C:\\Images\\";
 		List<Categorias> ListCategorias = new ArrayList<>();
 		List<Productos> ListProductos = new ArrayList<>();
 
