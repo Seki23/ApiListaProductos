@@ -112,7 +112,7 @@ public class ListaProductosServiceImpl implements ListaProductosService {
 					String base64 = Base64.getEncoder().encodeToString(imageBytes);
 
 					String imagen = path + cat.getCatImagen();
-					categoria.setCatImagen(imagen);
+					categoria.setCatImagen(base64);
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -134,9 +134,13 @@ public class ListaProductosServiceImpl implements ListaProductosService {
 
 			if (!prod.getPrdImagen().isEmpty()) {
 				try {
+					Path fileName = Paths.get(path, prod.getPrdImagen());
+					byte[] imageBytes = Files.readAllBytes(fileName);
+					String base64 = Base64.getEncoder().encodeToString(imageBytes);
+					
 					String imagen = path + prod.getPrdImagen();
 					listaProductos.add(new ProductosResponseDto(prod.getPrdNombre(), prod.getPrdDescripcion(),
-							prod.getPrdPrecio(), imagen));
+							prod.getPrdPrecio(), base64));
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
