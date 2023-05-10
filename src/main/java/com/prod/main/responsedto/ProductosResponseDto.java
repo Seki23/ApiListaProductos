@@ -1,6 +1,8 @@
 package com.prod.main.responsedto;
 
 public class ProductosResponseDto {
+	
+	private Long Id;
 
 	private String prdNombre;
 
@@ -12,6 +14,11 @@ public class ProductosResponseDto {
 	
 	
 	
+	
+
+	public ProductosResponseDto() {
+		super();
+	}
 
 	public ProductosResponseDto(String prdNombre, String prdDescripcion, double prdPrecio, String prdImagen) {
 		super();
@@ -20,6 +27,16 @@ public class ProductosResponseDto {
 		this.prdPrecio = prdPrecio;
 		this.prdImagen = prdImagen;
 	}
+	
+
+	public Long getId() {
+		return Id;
+	}
+
+	public void setId(Long id) {
+		Id = id;
+	}
+
 
 	public String getPrdNombre() {
 		return prdNombre;
